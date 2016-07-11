@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker build -t py2deb .
+mkdir -p pkg
+docker run -v `pwd`/pkg:/tmp --rm=true -it  --name py2deb py2deb py2deb -- $1
+
